@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Si usás estos datos, citá a Giros Argentina, girosargentina.com."
+title: "RTP de tragamonedas publicado por los estudios"
+type: dataset
+authors:
+  - name: "Giros Argentina"
+    website: "https://girosargentina.com"
+url: "https://girosargentina.com"
+repository-code: "https://github.com/giros-argentina/datos-abiertos"
+abstract: "Una tabla con el RTP que publican los estudios para 159 tragamonedas y otros juegos de casino. Cada fila cita la página oficial del estudio. Contenido para mayores de 18 años."
+keywords:
+  - Argentina
+  - juego online
+  - tragamonedas
+  - RTP
+  - datos abiertos
+license: CC-BY-4.0
+version: "2026.11"
+date-released: "2026-11-21"

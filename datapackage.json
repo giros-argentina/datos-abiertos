@@ -1,0 +1,145 @@
+{
+  "name": "giros-argentina-datos-abiertos",
+  "title": "RTP de tragamonedas publicado por los estudios, datos abiertos de Giros Argentina",
+  "description": "RTP de 159 tragamonedas y otros juegos de casino, como lo publica cada estudio. Cada fila cita la página oficial del estudio. Contenido para mayores de 18 años.",
+  "homepage": "https://girosargentina.com",
+  "version": "2026.11",
+  "created": "2026-11-21",
+  "languages": [
+    "es-AR"
+  ],
+  "keywords": [
+    "Argentina",
+    "juego online",
+    "tragamonedas",
+    "RTP",
+    "datos abiertos"
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Giros Argentina",
+      "path": "https://girosargentina.com",
+      "role": "author"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Páginas oficiales de los estudios de juegos, citadas en la columna fuente_url de cada fila"
+    }
+  ],
+  "resources": [
+    {
+      "name": "rtp-tragamonedas",
+      "title": "RTP de tragamonedas y otros juegos de casino",
+      "description": "Una fila por juego con RTP publicado por su estudio. Actualización mensual.",
+      "path": "rtp_tragamonedas.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "profile": "tabular-data-resource",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "title": "Creative Commons Attribution 4.0 International",
+          "path": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "juego",
+            "type": "string",
+            "description": "Nombre del juego.",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "estudio",
+            "type": "string",
+            "description": "Estudio que desarrolla el juego.",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "rtp_porcentaje",
+            "type": "number",
+            "description": "RTP teórico que publica el estudio, en porcentaje. Si publica varias versiones, la más alta.",
+            "constraints": {
+              "required": true,
+              "minimum": 80,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "rtp_otros_valores",
+            "type": "string",
+            "description": "Otros valores de RTP que publica el mismo estudio para el juego, separados por punto y coma. Vacío si publica uno solo."
+          },
+          {
+            "name": "volatilidad",
+            "type": "string",
+            "description": "Volatilidad como la publica el estudio, en su escala y su idioma. En PG Soft es el valor del catálogo, de 1 a 3. Vacía si la fuente no la publica."
+          },
+          {
+            "name": "apuesta_min_eur",
+            "type": "number",
+            "description": "Apuesta mínima en euros según la ficha del estudio. Vacía si la fuente no la publica.",
+            "constraints": {
+              "minimum": 0
+            }
+          },
+          {
+            "name": "apuesta_max_eur",
+            "type": "number",
+            "description": "Apuesta máxima en euros según la ficha del estudio. Vacía si la fuente no la publica.",
+            "constraints": {
+              "minimum": 0
+            }
+          },
+          {
+            "name": "ganancia_maxima_x",
+            "type": "integer",
+            "description": "Ganancia máxima en veces la apuesta según el estudio. Vacía si la fuente no la publica como múltiplo.",
+            "constraints": {
+              "minimum": 1
+            }
+          },
+          {
+            "name": "fuente_url",
+            "type": "string",
+            "description": "Ficha, catálogo o sitio oficial del estudio del que sale la fila.",
+            "format": "uri",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "url_giros",
+            "type": "string",
+            "description": "Página de Giros Argentina sobre el juego.",
+            "format": "uri",
+            "constraints": {
+              "required": true
+            }
+          }
+        ],
+        "primaryKey": [
+          "juego",
+          "estudio"
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}
